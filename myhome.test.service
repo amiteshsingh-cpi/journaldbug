@@ -1,0 +1,16 @@
+[Unit]
+Description=Bug in journald
+After=multi-user.target
+
+[Install]
+WantedBy=multi-user.target
+[Service]
+Type=simple
+ExecStart=/home/alarm/repos/iot-platform/platform/src/test/test 
+WorkingDirectory=/
+Restart=always
+RestartSec=5
+#StandardOutput=syslog
+#StandardError=syslog
+SyslogIdentifier=%n
+
